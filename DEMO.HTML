@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Image Info Gallery</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #0a0a0a;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.header {
+    background-color: #007BFF;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+} /* Added missing closing brace */
+
+        /* Gallery styling */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff7e5f;
+        }
+
+        .modal-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .modal-description {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html">back to home </a>
+
+    <h1>Image Info Gallery</h1>
+    <div class="header">
+        Click on any image to learn more about it!
+    </div>
+    <div class="gallery">
+        <img src="IMAGES/3eaa33d1-a4a5-43bf-825c-0ee7b118a351.jpeg" alt="Slender Plant" class="gallery-item" data-title="Tradescantia" data-description="Information on Chrysanthemum Cultivation
+
+        Chrysanthemums, often known as mums, are popular flowering plants in the garden and cut flower industry. Here is detailed information about growing them:
+        
+        1. Propagation and Planting
+        
+        Propagation: Chrysanthemums are commonly propagated through cuttings, as seen here. Cuttings are taken from healthy plants and rooted in soil or a potting medium.
+        
+        Potting: The pots shown are standard for young plants to develop roots and initial growth. Ensure good-quality, well-draining potting mix is used to prevent root rot.
+        
+        
+        2. Training with Stakes
+        
+        Staking: As chrysanthemum plants grow, they are typically staked to help support their stems. This prevents the plants from flopping over and keeps them upright, which is essential for good airflow and uniform growth.
+        
+        Tying: Soft ties are used to secure the plants gently to the stakes without damaging the stems. This setup keeps the plants structured and prepared for their blooming phase.
+        
+        
+        3. Growing Conditions
+        
+        Light: Chrysanthemums prefer full sun, as it promotes healthy growth and abundant flowering. Place them in a location with at least 6 hours of sunlight daily.
+        
+        Watering: Keep the soil consistently moist, but avoid overwatering. Mums have shallow root systems, so frequent, moderate watering is better than deep watering.
+        
+        Temperature: They thrive in moderate climates. In hot climates, providing some afternoon shade can be beneficial.">
+        <img src="IMAGES/mango.JPG" alt="Mango tree" class="gallery-item" data-title="Mango tree" data-description="The plant in the image is a mango tree (Mangifera indica). Mango trees are well-known for producing mangoes, a popular tropical fruit enjoyed worldwide. Here’s a bit more about the mango tree and its characteristics:
+
+        Mango Tree Overview
+        Mango trees are evergreen and can grow to a significant height, often reaching 30–100 feet. They are native to South Asia but are now grown in tropical and subtropical regions around the world.
+        
+        Key Characteristics
+        Leaves: Mango leaves are long, narrow, and leathery, with a smooth, glossy texture. Young leaves often have a reddish or bronze tint before they mature to a dark green color.
+        Fruit: Mango trees produce mangoes, which vary in shape, size, and color depending on the variety. Mangoes are generally oval or kidney-shaped with a sweet, juicy pulp.
+        Growth: Mango trees are deep-rooted, which helps them withstand dry periods. They start flowering in the spring, and fruits typically mature over several months, depending on the climate and variety.
+        Uses of Mango
+        Fruit: Mangoes are consumed fresh, dried, or used in juices, desserts, sauces, and chutneys. They are highly nutritious, rich in vitamins A, C, and E.
+        Medicinal Uses: Mango leaves are used in traditional medicine for treating diabetes and other ailments, while the bark and flowers also have medicinal properties.
+        Wood: In some regions, mango wood is used for making furniture and other wooden items.
+        Growing Conditions
+        ">
+        <img src="IMAGES/chrysanthem.JPG" alt="chrysanthem cultivation" class="gallery-item" data-title="chrysanthem cultivation" data-description="nformation on Chrysanthemum Cultivation
+
+        Chrysanthemums, often known as mums, are popular flowering plants in the garden and cut flower industry. Here is detailed information about growing them: ⁠Propagation and Planting
+        
+        Propagation: Chrysanthemums are commonly propagated through cuttings, as seen here. Cuttings are taken from healthy plants and rooted in soil or a potting medium.
+        
+        Potting: The pots shown are standard for young plants to develop roots and initial growth. Ensure good-quality, well-draining potting mix is used to prevent root rot.
+        
+        
+        2.⁠⁠Training with Stakes
+        
+        Staking: As chrysanthemum plants grow, they are typically staked to help support their stems. This prevents the plants from flopping over and keeps them upright, which is essential for good airflow and uniform growth.
+        
+        Tying: Soft ties are used to secure the plants gently to the stakes without damaging the stems. This setup keeps the plants structured and prepared for their blooming phase.
+        
+        
+        3.⁠⁠Growing Conditions
+        
+        Light: Chrysanthemums prefer full sun, as it promotes healthy growth and abundant flowering. Place them in a location with at least 6 hours of sunlight daily.
+        
+        Watering: Keep the soil consistently moist, but avoid overwatering. Mums have shallow root systems, so frequent, moderate watering is better than deep watering.
+        
+        Temperature: They thrive in moderate climates. In hot climates, providing some afternoon shade can be beneficial.">
+        <img src="IMAGES/ok.JPG" alt="Group of cutting" class="gallery-item" data-title="Group of plants" data-description="1.⁠ ⁠Hardwood Cuttings Overview
+
+        Hardwood cuttings are sections of mature, woody stems taken during the dormant season, typically in late fall or winter, when the plant is not actively growing.
+        
+        They are often used for plants like hydrangeas, roses, willows, and fruit bushes.
+        
+        
+        2.⁠ ⁠Identification of the Plant
+        
+        Based on the leaf shape and color in your photo, these cuttings might belong to a plant like hydrangea, which is commonly propagated in this way.
+        
+        However, it's hard to confirm the exact species from this image alone without more leaf or stem characteristics.
+        
+        
+        3.⁠ ⁠Planting and Care Instructions
+        
+        Soil: Use well-draining potting soil or a mix of peat and perlite. Keep the soil moist but not soggy to avoid rot.
+        
+        Watering: Regularly water to maintain moisture, especially during the early stages.
+        
+        Light: Place the pot in a bright, indirect light location, avoiding direct sunlight until the roots establish.
+        
+        Temperature: Maintain a stable temperature. Rooting success can vary depending on the plant species, but most hardwood cuttings prefer cool temperatures.
+        
+        
+        4.⁠ ⁠Signs of Successful Rooting
+        
+        New leaf growth, as seen in your pot, is a good sign that the cuttings are beginning to root.
+        
+        Check for resistance when gently pulling on the cuttings after a few weeks, which can indicate root development.
+        
+        
+        5.⁠ ⁠Transplanting
+        
+        Once the cuttings have established roots and show healthy growth, you can transplant them into individual pots or directly into the garden if the climate allows.">
+        <img src="IMAGES/papaya.JPG" alt="Papaya Tree" class="gallery-item" data-title="Papaya" data-description="The plant in the image is a papaya tree (Carica papaya). Here’s some information about it:
+
+        Papaya Tree Overview
+        Papaya trees are tropical plants that produce a large, delicious fruit commonly known as papaya. They are fast-growing and have a unique appearance with a single trunk, large palmate leaves, and clusters of fruit that grow directly on the stem. Papayas are usually grown in warm climates, as they are sensitive to frost and require plenty of sunlight and warmth to thrive.
+        
+        Key Characteristics
+        Leaves: Papaya leaves are large, deeply lobed, and have a unique, star-like shape. The leaves grow in a spiral arrangement around the top of the stem.
+        Fruit: The tree in your image has green, unripe papayas. These will turn yellow or orange as they ripen, depending on the variety. Papayas are typically pear-shaped and contain numerous small, black seeds inside.
+        Growth: Papaya trees can reach up to 10-12 feet tall. They don’t have branches, so the fruit grows close to the trunk in clusters.
+        Uses of Papaya
+        Fruits: Papayas are eaten fresh when ripe or used in salads and smoothies. The unripe fruit is also used in cooking, especially in tropical cuisines.
+        Medicinal Properties: Papaya contains papain, an enzyme that aids digestion and is used in various medicinal preparations. The fruit is also rich in vitamins A and C.
+        ">
+        <img src="IMAGES/grapevine basics.JPG" alt="Grapevine Basics" class="gallery-item" data-title="Tropical Paradise" data-description="1.⁠ ⁠Grapevine Basics
+
+        Grapevines are woody, perennial plants from the genus Vitis. They are commonly grown for their fruit, grapes, which can be used fresh, dried, or processed into wine, juice, and other products.
+        
+        Grapevines have a climbing growth habit and need support structures like trellises to grow effectively and to maximize fruit production.
+        
+        
+        2.⁠ ⁠Growing Conditions
+        
+        Climate: Grapevines thrive in temperate regions but can also grow in hot climates, provided they have adequate water and some shade. They need a balance of warm days and cool nights to produce quality fruit.
+        
+        Sunlight: They require full sun for at least 6–8 hours a day to ensure healthy growth and fruit production.
+        
+        Soil: Grapevines prefer well-drained soils with a neutral to slightly acidic pH (around 6.0–7.0).
+        
+        
+        3.⁠ ⁠Trellising and Training
+        
+        Purpose: Training grapevines on a trellis helps manage their growth, improves air circulation, reduces disease risk, and allows sunlight to reach all parts of the plant, which is essential for fruit quality.
+        
+        Types of Trellises: There are several methods, including the vertical shoot positioning (VSP), Geneva double curtain, and pergola systems, each suited to different vineyard layouts and climates.
+        
+        Pruning: Grapevines require annual pruning to remove old wood, encourage new growth, and maintain productivity. Proper pruning shapes the vine and prevents it from becoming overly dense.">
+        <img src="IMAGES/dragon fruit.HEIC" alt="Dragon Fruit" class="gallery-item" data-title="Dragon Fruit" data-description="The plants in this image appear to be young Dragon Fruit (Hylocereus spp.) cacti, which are grown in plastic grow bags. Dragon Fruit, also known as Pitaya, is a tropical cactus species that produces vibrant, spiky fruits with sweet, juicy flesh.
+
+        Brief Explanation:
+        
+        Plant Type: Dragon Fruit is a cactus that grows well in warm, dry climates.
+        
+        Growing Requirements: It prefers well-draining soil, bright sunlight, and minimal watering once established, as it is drought-tolerant.
+        
+        Propagation: It is commonly propagated from stem cuttings, as seen here.
+        
+        Support: As it grows, Dragon Fruit typically requires support structures or trellises, since it can become vine-like and top-heavy.
+        
+        Fruit: The cactus produces edible fruit that is either white or red/purple on the inside, depending on the variety, and is rich in vitamins and antioxidants.
+        
+        
+        These young plants are likely being grown in a nursery for further transplantation. Proper care, including sunlight and well-drained soil, will help them develop into mature, fruit-bearing plants.">
+        <img src="IMAGES/strelizia reginae.HEIC" alt="Strelizia Reginae" class="gallery-item" data-title="Strelizia Reginae" data-description="The plant in your image is a Strelitzia reginae, commonly known as the Bird of Paradise plant. Here's some detailed information about it:
+
+        1.⁠ ⁠Description
+        
+        Appearance: The Bird of Paradise plant is known for its unique, striking flowers that resemble a bird in flight. The flowers have bright orange and blue petals, emerging from a bract that looks like a beak
+        
+        Leaves: It has large, paddle-shaped leaves that resemble those of a banana plant. They are dark green and can add a tropical feel to any garden or indoor space.
+        
+        
+        2.⁠ ⁠Origin and Habitat
+        
+        Native to South Africa, Bird of Paradise plants thrive in subtropical and tropical regions.
+        
+        It grows well in warm climates and prefers full sun to partial shade.
+        
+        3.⁠ ⁠Growing Conditions
+        
+        Light: Requires bright, indirect light when indoors. Outdoors, it does well in full sun to partial shade.
+        
+        Soil: Prefers well-draining soil rich in organic matter.
+        
+        Water: Needs regular watering but doesnt tolerate waterlogged soil. Allow the top inch of soil to dry out between waterings.
+        
+        Temperature: Ideal temperature range is between 65-70°F (18-21°C). It can tolerate slightly cooler temperatures but is sensitive to frost.
+        
+        Humidity: Thrives in moderate to high humidity levels. Misting the leaves occasionally can help in dry climates">
+        <img src="IMAGES/dog.JPG" alt="DOG" class="gallery-item" data-title="Dog" data-description="The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of the wolf. Also called the domestic dog, it was selectively bred from an extinct population of wolves during the Late Pleistocene by hunter-gatherers. The dog was the first species to be domesticated by humans, over 14,000 years ago and before the development of agriculture. Experts estimate that due to their long association with humans, dogs have gained the ability to thrive on a starch-rich diet that would be inadequate for other canids.[4]
+
+        Dogs have been bred for desired behaviors, sensory capabilities, and physical attributes.[5] Dog breeds vary widely in shape, size, and color. They have the same number of bones (with the exception of the tail), powerful jaws that house around 42 teeth, and well-developed senses of smell, hearing, and sight. Compared to humans, dogs have an inferior visual acuity, a superior sense of smell, and a relatively large olfactory cortex. They perform many roles for humans, such as hunting, herding, pulling loads, protection, companionship, therapy, aiding disabled people, and assisting police and the military">
+        <img src="IMAGES/pegion.JPG" alt="Pegion" class="gallery-item" data-title="Pegion" data-description="The domestic pigeon (Columba livia domestica or Columba livia forma domestica)[2] is a pigeon subspecies that was derived from the rock dove or rock pigeon. The rock pigeon is the world's oldest domesticated bird. Mesopotamian cuneiform tablets mention the domestication of pigeons more than 5,000 years ago, as do Egyptian hieroglyphics. Pigeons were most likely domesticated in the Mediterranean at least 2000–5000 years ago, and may have been domesticated earlier as a food source.[3] Research suggests that domestication of pigeons occurred as early as 10,000 years ago.[4]
+
+        Pigeons have held historical importance to humans as food, pets, holy animals, and messengers. Due to their homing ability, pigeons have been used to deliver messages, including during the world wars.[5] Despite this, city pigeons, which are feral birds released for one reason or another, are generally seen as pests, mainly due to their droppings. Feral pigeons are considered invasive in many parts of the world,[6][7] though they have a positive impact on wild bird populations, serving as an important prey species for birds of prey.[citation needed]">
+        <img src="IMAGES/sanke.JPG" alt="snake" class="gallery-item" data-title="snake" data-description="Snakes are elongated, limbless reptiles of the suborder Serpentes (/sɜːrˈpɛntiːz/).[2] Like all other squamates, snakes are ectothermic, amniote vertebrates covered in overlapping scales. Many species of snakes have skulls with several more joints than their lizard ancestors, enabling them to swallow prey much larger than their heads (cranial kinesis). To accommodate their narrow bodies, snakes' paired organs (such as kidneys) appear one in front of the other instead of side by side, and most have only one functional lung. Some species retain a pelvic girdle with a pair of vestigial claws on either side of the cloaca. Lizards have independently evolved elongate bodies without limbs or with greatly reduced limbs at least twenty-five times via convergent evolution, leading to many lineages of legless lizards.[3] These resemble snakes, but several common groups of legless lizards have eyelids and external ears, which snakes lack, although this rule is not universal (see Amphisbaenia, Dibamidae, and Pygopodidae).">
+        <img src="IMAGES/frog.JPG" alt="Frog" class="gallery-item" data-title="Frog" data-description="This article is about the group of amphibians. For other uses, see Frog (disambiguation).
+        Frogs
+        An adult frog has a stout body, protruding eyes, anteriorly-attached tongue, limbs folded underneath, and no tail (the tail of tailed frogs is an extension of the male cloaca). Frogs have glandular skin, with secretions ranging from distasteful to toxic. Their skin varies in colour from well-camouflaged dappled brown, grey and green to vivid patterns of bright red or yellow and black to show toxicity and ward off predators. Adult frogs live in fresh water and on dry land; some species are adapted for living underground or in trees.">
+        <img src="IMAGES/Dragon fly.JPG" alt="Dragon fly" class="gallery-item" data-title="Dragon fly" data-description="A dragonfly is a flying insect belonging to the infraorder Anisoptera below the order Odonata. About 3,000 extant species of dragonflies are known. Most are tropical, with fewer species in temperate regions. Loss of wetland habitat threatens dragonfly populations around the world. Adult dragonflies are characterised by a pair of large, multifaceted, compound eyes, two pairs of strong, transparent wings, sometimes with coloured patches, and an elongated body. Many dragonflies have brilliant iridescent or metallic colours produced by structural coloration, making them conspicuous in flight. An adult dragonfly's compound eyes have nearly 24,000 ommatidia each.
+        Dragonflies can be mistaken for the closely related damselflies, which make up the other odonatan infraorder (Zygoptera) and are similar in body plan, though usually lighter in build; however, the wings of most dragonflies are held flat and away from the body, while damselflies hold their wings folded at rest, along or above the abdomen. Dragonflies are agile fliers, while damselflies have a weaker, fluttery flight. Dragonflies make use of motion camouflage when attacking prey or rivals">
+        <img src="IMAGES/mosiquto.JPG" alt="mosquito" class="gallery-item" data-title="mosiquto" data-description="This article is about the insect. For other uses, see Mosquito (disambiguation).
+        Mosquito
+        Mosquitoes, the Culicidae, are a family of small flies consisting of 3,600 species. The word mosquito (formed by mosca and diminutive -ito)[2] is Spanish and Portuguese for little fly.[3] Mosquitoes have a slender segmented body, one pair of wings, three pairs of long hair-like legs, and specialized, highly elongated, piercing-sucking mouthparts. All mosquitoes drink nectar from flowers; females of some species have in addition adapted to drink blood. The group diversified during the Cretaceous period. Evolutionary biologists view mosquitoes as micropredators, small animals that parasitise larger ones by drinking their blood without immediately killing them. Medical parasitologists view mosquitoes instead as vectors of disease, carrying protozoan parasites or bacterial or viral pathogens from one host to another.
+        
+        The mosquito life cycle consists of four stages: egg, larva, pupa, and adult. Eggs are laid on the water surface; they hatch into motile larvae that feed on aquatic algae and organic material. These larvae are important food sources for many freshwater animals, such as dragonfly nymphs, many fish, and some birds. Adult females of many species have mouthparts adapted to pierce the skin of a host and feed on blood of a wide range of vertebrate hosts, and some invertebrates, primarily other arthropods. Some species only produce eggs after a blood meal">
+        <img src="IMAGES/fly.JPG" alt="Fly" class="gallery-item" data-title="Fly" data-description="The housefly (Musca domestica) is a fly of the suborder Cyclorrhapha. It possibly originated in the Middle East, and spread around the world as a commensal of humans. It is the most common fly species found in houses. Adults are gray to black, with four dark, longitudinal lines on the thorax, slightly hairy bodies, and a single pair of membranous wings. They have red eyes, set farther apart in the slightly larger female.
+        The female housefly usually mates only once and stores the sperm for later use. It lays batches of about 100 eggs on decaying organic matter such as food waste, carrion, or feces. These soon hatch into legless white larvae, known as maggots. After two to five days of development, these metamorphose into reddish-brown pupae, about 8 millimetres (3⁄8 inch) long. Adult flies normally live for two to four weeks, but can hibernate during the winter. The adults feed on a variety of liquid or semi-liquid substances, as well as solid materials which have been softened by their saliva. They can carry pathogens on their bodies and in their feces, contaminate food, and contribute to the transfer of food-borne illnesses, while, in numbers, they can be physically annoying. For these reasons, they are considered pests.">
+        <img src="IMAGES/crane.JPG" alt="Crane" class="gallery-item" data-title="crane" data-description="This article is about the bird family. For other uses, see Crane (disambiguation).
+        Crane.Cranes are a type of large bird with long legs and necks in the biological family Gruidae of the order Gruiformes. The family has 15 species placed in four genera which are Antigone, Balearica, Leucogeranus, and Grus.[1] They are large birds with long necks and legs, a tapering form, and long secondary feathers on the wing that project over the tail. Most species have muted gray or white plumages, marked with black, and red bare patches on the face, but the crowned cranes of the genus Balearica have vibrantly-coloured wings and golden of cranes migrate over long distances; others do not migrate at all.[2] Cranes are solitary during the breeding season, occurring in pairs, but during the non-breeding season, most species are gregarious, forming large flocks where their numbers are sufficient.">
+        <img src="IMAGES/earth worm.JPG" alt="Earth worm" class="gallery-item" data-title="Earth Worm" data-description="An earthworm is a soil-dwelling terrestrial invertebrate that belongs to the phylum Annelida. The term is the common name for the largest members of the class (or subclass, depending on the author) Oligochaeta. In classical systems, they were in the order of Opisthopora since the male pores opened posterior to the female pores, although the internal male segments are anterior to the female. Theoretical cladistic studies have placed them in the suborder Lumbricina of the order Haplotaxida, but this may change.[clarification needed] Other slang names for earthworms include dew-worm, rainworm, nightcrawler, and angleworm (from its use as angling hookbaits). Larger terrestrial earthworms are also called megadriles (which translates to big worms) as opposed to the microdriles (small worms) in the semiaquatic families Tubificidae, Lumbricidae and Enchytraeidae. The megadriles are characterized by a distinct clitellum (more extensive than that of microdriles) and a vascular system with true capillaries.">
+        <img src="IMAGES/spider.JPG" alt="Spider" class="gallery-item" data-title="Spider" data-description="Spiders (order Araneae) are air-breathing arthropods that have eight limbs, chelicerae with fangs generally able to inject venom,[2] and spinnerets that extrude silk.[3] They are the largest order of arachnids and rank seventh in total species diversity among all orders of organisms.[4][5] Spiders are found worldwide on every continent except Antarctica, and have become established in nearly every land habitat. As of September 2024, 52,309 spider species in 134 families have been recorded by taxonomists.[1] However, there has been debate among scientists about how families should be classified, with over 20 different classifications proposed since 1900
+        spiders (as with all arachnids) differ from other arthropods in that the usual body segments are fused into two tagmata, the cephalothorax or prosoma, and the opisthosoma, or abdomen, and joined by a small, cylindrical pedicel. However, as there is currently neither paleontological nor embryological evidence that spiders ever had a separate thorax-like division, there exists an argument against the validity of the term cephalothorax, which means fused cephalon (head) and the thorax.">
+        <img src="IMAGES/Tailor bird.JPG" alt="Tailor Bird" class="gallery-item" data-title="Tailor Bird" data-description="The dark-necked tailorbird (Orthotomus atrogularis) is a songbird species. Formerly placed in the Old World warbler assemblage, it is now placed in the family Cisticolidae.It is found in Bangladesh, Northeast India and Southeast Asia. Its natural habitats are subtropical or tropical moist lowland forest and subtropical or tropical mangrove forest.
+        It is often kept as a pet">
+    </div>
+
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <p class="modal-description" id="modal-description">Description</p>
+        </div>
+    </div>
+
+    <script>
+        
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const closeModal = document.getElementById('close');
+
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modalTitle.textContent = item.getAttribute('data-title');
+                modalDescription.textContent = item.getAttribute('data-description');
+                modal.style.display = 'flex';
+            });
+        });
+
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity Database Near LPU</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #007BFF, #00C853);
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        form {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        
+        form input:focus, form textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        
+        button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        #data-list {
+            margin-top: 20px;
+        }
+        
+        .data-item {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #007BFF;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        h3 {
+            color: #00C853;
+        }
+        li{
+            list-style: none;
+            border: #007BFF;
+            box-sizing: border-box;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Biodiversity Database</h1>
+        <nav>
+            <ul>
+                <li><a href="#data-entry">Data Entry</a></li>
+                <li><a href="demo.html">Database</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="data-entry">
+            <h2>Submit Biodiversity Data</h2>
+            <form id="biodiversity-form">
+                <label for="speciesName">Species Name:</label>
+                <input type="text" id="speciesName" required>
+
+                <label for="habitat">Habitat:</label>
+                <input type="text" id="habitat" required>
+
+                <label for="conservationStatus">Conservation Status:</label>
+                <input type="text" id="conservationStatus" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="database">
+            <h2>Biodiversity Data Near LPU</h2>
+            <div id="data-list"></div>
+            <li>
+                <img src="https://blog402.wordpress.com/wp-content/uploads/2011/04/campus-map1.jpg" alt="Around Lovely university" height="1000px" width="1000px">
+            </li>
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
